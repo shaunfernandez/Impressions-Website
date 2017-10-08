@@ -1,0 +1,277 @@
+
+.info-container{
+	background-color:transparent;
+	height: 100vh;
+	width: 100%;
+	position:absolute;
+	right:0;
+	top:0;
+	display: none;
+	font-family: "Coves";
+}
+
+
+
+.info, .movable{
+	background: transparent;
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	display: flex;
+	-webkit-flex-direction: column;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+	/*border: 1px solid #000;*/
+	justify-content:center;
+	padding:0;
+	transform: perspective(5990px);
+	transform-style: preserve-3d;
+	color: inherit;
+	/*margin: 100px 500px;
+*/}
+
+.info{
+	display: none;
+
+}
+
+.movable{
+	top:0;
+	bottom: 0;
+}
+
+
+.main{
+	display:flex;
+	justify-content: space-around;
+	color: inherit;
+	align-items:center;
+	
+}
+
+.main div {
+	flex: 1;
+}
+
+.image-main {
+	max-width: 400px;
+}
+
+
+.main h2{
+	font-size: 35px;
+	line-height: 40px;
+	text-align:center;
+	color: inherit;
+	margin: 10px;
+}
+
+.content, .image-main{
+	width: 400px;
+	min-height: 400px;
+	
+	display: flex;
+	flex-direction:column;
+	justify-content: center;
+/*	border: 1px solid #000;*/
+/*	margin: 0 100px;*/
+	color: inherit;
+}
+
+
+.content{
+	width: 500px;
+	transform: translateZ(0);
+	padding: 20px;
+}
+.content p{
+	color: inherit;
+	text-align: center;
+	font-size: 18px;
+}
+
+.contact_data{
+	display: flex;
+	flex-flow: row wrap;
+
+	padding: 0;
+}
+
+.contactinfo, .contact_dept{
+	width: 200px;
+}
+
+.contactinfo{
+	margin: 20px;
+}
+
+
+.content a{
+	text-decoration: none;
+	color: inherit;
+}
+.info[data="contact"] .image-main{
+	background: url('../Exports/tardis.png') 0 0  no-repeat;
+	background-size: contain;
+}
+
+.info[data="about"] .image-main{
+	background: url('../Exports/Hexa.png') 0 0  no-repeat;
+	background-size: contain;
+}
+
+.info[data="sponsors"] .image-main{
+	background: url('../Exports/death.png') 0 0  no-repeat;
+	background-size: contain;
+}
+
+
+
+
+.shape{
+	position: absolute;	
+	top:0;
+	left:0;
+	z-index: -1;
+	width: 150px;
+    
+}
+
+.info[data="contact"] .shape{
+	-webkit-clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+    clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+
+/*	border: 1px solid #000;*/
+	background: linear-gradient(rgb(33, 164, 255), rgb(190, 0 , 255))
+}
+.info[data="about"] .shape{
+	-webkit-clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+	clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+	background: linear-gradient(rgb(204, 189, 138), rgb(135, 123, 148))
+}
+.info[data="sponsors"] .shape{
+	border-radius: 50%;
+	background: linear-gradient(rgb(255, 154, 138), rgb(255, 0, 50))
+}
+
+
+
+
+.o33:nth-of-type(7){
+	top: 45%;
+	left: 7%;
+	height: 300px;
+	width: 300px;
+	transform: translateZ(-100px) ;
+}
+
+.o33:nth-of-type(6){
+	top: 10%;
+	left: 85%;
+	height: 125px;
+	width: 125px;
+	transform: rotate(-60deg);
+	transform: translateZ(-10px) rotate(-50deg);
+}
+
+.o33:nth-of-type(5){
+	top: 70%;
+	left: 85%;
+	height: 125px;
+	width: 125px;
+	transform: translateZ(-50px);
+}
+
+.o33:nth-of-type(4){
+	top: 80%;
+	left: 10%;
+	transform: rotate(20deg) rotate(90deg) translateZ(150px);
+	height: 150px;
+	
+}
+
+.o33:nth-of-type(3){
+	top: 15%;
+	left: 50%;
+	height: 150px;
+	transform: rotate(240deg) translateZ(-150px);
+}
+
+.o33:nth-of-type(2){
+	top: 80%;
+	left: 60%;
+	transform: rotate(-10deg) translateZ(-50px);
+	height: 75px;
+	width: 75px;
+	
+}
+
+.o33{
+	height: 150px;
+
+}
+
+.o33:nth-of-type(1){
+	top: 5%;
+	left: 5%;
+	transform: rotate(180deg) translateZ(-100px);
+	height: 75px;
+	width: 75px;
+}
+
+
+.info .cross{
+	
+	background: url('../img/cross.svg') 0 0 no-repeat;
+	background-size: cover;
+	background-color: #fff;
+	border:solid 3px #000;
+	position: absolute;
+	z-index: 10;
+	cursor: pointer;
+	top: 30px;
+	right: 30px;
+	width: 30px;
+	height: 30px;
+	margin:5px;
+	display: block;
+	color: #fff;
+}
+
+.info_open{
+	display:flex;
+}
+
+@media only screen and (max-width: 1000px){
+	.image-main{
+		display:none;
+	}
+	.content{
+		margin: 0 auto;
+		z-index: 1;
+		height: 80vh;
+	}
+
+	.o33:nth-of-type(7){
+		display: none;
+	}
+
+	.content h2{
+		font-size: 50px;
+	}
+
+	.content p{
+		font-size: 30px;
+	}
+
+	.contactinfo{
+		font-size: 30px;
+	}
+
+	.main{
+		height: 100vh;
+		
+	}
+
+
+}
